@@ -1,11 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { StyledLink } from './Nav.styled';
 
 export default function Nav() {
   return (
     <nav>
-      <Link to="/">View Users</Link>
-      <Link to="/register">Register User</Link>
+      <StyledLink to="/">View Users</StyledLink>
+      <StyledLink to="/register">Register User</StyledLink>
     </nav>
   );
 }

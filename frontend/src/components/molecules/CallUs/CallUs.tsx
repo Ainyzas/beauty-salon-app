@@ -1,14 +1,13 @@
-import React from 'react';
-import { BiPhoneCall } from 'react-icons/bi';
+import { StyledBiPhoneCall, StyledCallDiv, StyledWrapperDiv } from './CallUs.styled';
 
 export default function CallUs() {
   return (
-    <div>
-      <BiPhoneCall />
-      <div>
-        <h5>Call us At:</h5>
-        <h6>+370 111 99922</h6>
-      </div>
-    </div>
+    <StyledWrapperDiv>
+      <StyledBiPhoneCall />
+      <StyledCallDiv>
+        <h4>Administration</h4>
+        <h5>+370 111 99922</h5>
+      </StyledCallDiv>
+    </StyledWrapperDiv>
   );
 }
