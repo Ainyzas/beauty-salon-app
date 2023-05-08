@@ -4,9 +4,9 @@ import { loginAdmin } from '../controllers/AdminController.js';
 
 const router = express.Router();
 
-router.get('/auth', loginAdmin);
-
 router.get('/users', fetchUsers);
+
+router.post('/auth', loginAdmin);
 
 router.post('/users', registerUser);
 
