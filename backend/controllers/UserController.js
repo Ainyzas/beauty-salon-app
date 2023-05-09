@@ -4,12 +4,19 @@ export async function fetchUsers(req, res) {
   try {
     const users = await User.find({}, { _id: 0, __v: 0 });
 
-    // Put date conversion in frontend
-    users.forEach((user) => {
-      const date = new Date(user.registrationDate);
-      user.registrationDate = date.toLocaleString('lt-LT');
-    });
-    console.log(users);
+    return res.status(200).json(users);
+  } catch (error) {
+    return res.status(500).json({ message: 'Internal Server Error' });
+  }
+}
+
+export async function fetchUsersBySurname(req, res) {
+  try {
+    const { surname } = req.query;
+
+    const capitalizedSurname = surname.charAt(0).toUpperCase() + surname.slice(1);
+
+    const users = await User.find({ surname: { $regex: capitalizedSurname } }, { _id: 0, __v: 0 });
 
     return res.status(200).json(users);
   } catch (error) {
