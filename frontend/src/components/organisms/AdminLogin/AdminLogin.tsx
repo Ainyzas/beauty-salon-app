@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { AdminLoginHandler } from '../../../api-calls/admin';
+import { StyledFormDiv, StyledLoginButton, StyledLoginForm } from './AdminLogin.styled';
 
 type adminProps = {
   setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
@@ -21,27 +22,33 @@ export default function AdminLogin({ setIsLoggedIn }: adminProps) {
   }
 
   return (
-    <form onSubmit={loginHandler}>
-      <label htmlFor="username">Username: </label>
-      <input
-        type="text"
-        id="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <br />
-      <label htmlFor="password">Password: </label>
-      <input
-        type={show ? 'text' : 'password'}
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
-      <input type="checkbox" id="show-password" checked={show} onChange={checkboxHandler} />
-      <label htmlFor="show-password">Show Password</label>
-      <br />
-      <button type="submit">Login</button>
-    </form>
+    <StyledLoginForm onSubmit={loginHandler}>
+      <StyledFormDiv>
+        <label htmlFor="username">Username: </label>
+        <input
+          type="text"
+          id="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </StyledFormDiv>
+
+      <StyledFormDiv>
+        <label htmlFor="password">Password: </label>
+        <input
+          type={show ? 'text' : 'password'}
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </StyledFormDiv>
+
+      <StyledFormDiv>
+        <input type="checkbox" id="show-password" checked={show} onChange={checkboxHandler} />
+        <label htmlFor="show-password">Show Password</label>
+      </StyledFormDiv>
+
+      <StyledLoginButton type="submit">LOGIN</StyledLoginButton>
+    </StyledLoginForm>
   );
 }

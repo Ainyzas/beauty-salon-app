@@ -4,6 +4,8 @@ import UserSearch from '../../molecules/UserSearch/UserSearch';
 import { fetchUsersBySurname } from '../../../api-calls/users';
 
 export type userObject = {
+  _id?: string;
+  handleDelete?: () => void;
   name: string;
   surname: string;
   email: string;

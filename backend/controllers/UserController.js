@@ -2,7 +2,7 @@ import User from '../models/UserModel.js';
 
 export async function fetchUsers(req, res) {
   try {
-    const users = await User.find({}, { _id: 0, __v: 0 });
+    const users = await User.find({}, { __v: 0 }).sort({ surname: 1 });
 
     return res.status(200).json(users);
   } catch (error) {
@@ -16,7 +16,9 @@ export async function fetchUsersBySurname(req, res) {
 
     const capitalizedSurname = surname.charAt(0).toUpperCase() + surname.slice(1);
 
-    const users = await User.find({ surname: { $regex: capitalizedSurname } }, { _id: 0, __v: 0 });
+    const users = await User.find({ surname: { $regex: capitalizedSurname } }, { __v: 0 }).sort({
+      surname: 1,
+    });
 
     return res.status(200).json(users);
   } catch (error) {
@@ -33,7 +35,15 @@ export async function registerUser(req, res) {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    const newUser = new User({ name, surname, email, registrationDate });
+    const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+    const capitalizedSurname = surname.charAt(0).toUpperCase() + surname.slice(1);
+
+    const newUser = new User({
+      name: capitalizedName,
+      surname: capitalizedSurname,
+      email,
+      registrationDate,
+    });
     await newUser.save();
 
     return res.status(201).json({ message: 'User created successfully' });
@@ -51,6 +61,19 @@ export async function updateUser(req, res) {
 
 export async function deleteUser(req, res) {
   try {
+    const { id } = req.params;
+
+    if (!id) {
+      return res.status(400).json({ message: 'Invalid user ID' });
+    }
+
+    const user = await User.findByIdAndDelete(id);
+
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    return res.status(200).json({ message: 'User deleted successfully' });
   } catch (error) {
     return res.status(500).json({ message: 'Internal Server Error' });
   }

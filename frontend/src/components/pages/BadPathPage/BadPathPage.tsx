@@ -7,5 +7,9 @@ export default function BadPathPage() {
     }, 1500);
   }, []);
 
-  return <div>Bad Path, Redirecting to Home Page...</div>;
+  return (
+    <div>
+      <h1>Bad Path, Redirecting to Home Page...</h1>
+    </div>
+  );
 }

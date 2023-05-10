@@ -13,10 +13,11 @@ export const StyledCallDiv = styled.div`
   h4,
   h5 {
     margin: 0.25rem 0.5rem;
+    color: var(--secondary-text-color);
   }
 
   h5 {
-    color: grey;
+    color: var(--main-text-color);
   }
 `;
 

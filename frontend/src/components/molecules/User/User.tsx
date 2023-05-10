@@ -9,7 +9,7 @@ import {
   StyledUserInfo,
 } from './User.styled';
 
-export default function User({ name, surname, email, registrationDate }: userObject) {
+export default function User({ handleDelete, name, surname, email, registrationDate }: userObject) {
   return (
     <StyledUserCard>
       <StyledUserInfo>
@@ -32,7 +32,7 @@ export default function User({ name, surname, email, registrationDate }: userObj
           <StyledAiFillEdit />
         </StyledEdit>
 
-        <StyledDelete>
+        <StyledDelete onClick={handleDelete}>
           <StyledAiFillDelete />
         </StyledDelete>
       </StyledUserButtons>

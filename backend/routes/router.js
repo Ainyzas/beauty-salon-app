@@ -1,5 +1,11 @@
 import express from 'express';
-import { fetchUsers, fetchUsersBySurname, registerUser } from '../controllers/UserController.js';
+import {
+  deleteUser,
+  fetchUsers,
+  fetchUsersBySurname,
+  registerUser,
+  updateUser,
+} from '../controllers/UserController.js';
 import { loginAdmin } from '../controllers/AdminController.js';
 
 const router = express.Router();
@@ -12,8 +18,8 @@ router.post('/auth', loginAdmin);
 
 router.post('/users', registerUser);
 
-router.put('/users/:id');
+router.put('/users/:id', updateUser);
 
-router.delete('/users/:id');
+router.delete('/users/:id', deleteUser);
 
 export default router;

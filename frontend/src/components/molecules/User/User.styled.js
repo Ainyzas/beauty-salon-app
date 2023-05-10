@@ -5,9 +5,28 @@ export const StyledUserCard = styled.div`
   padding: 0.25rem 1.5rem;
   display: flex;
   align-items: center;
-  background-color: grey;
+  background-color: var(--secondary-background);
   border: 1px solid transparent;
   border-radius: 10px;
+  opacity: 0;
+  animation: fadeIn 500ms ease-in-out forwards;
+
+  h4 {
+    color: var(--secondary-text-color);
+
+    span {
+      color: var(--main-text-color);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export const StyledUserInfo = styled.section`
@@ -35,11 +54,11 @@ border-radius: 0.5rem;
 
 export const StyledEdit = styled.button`
   ${Buttons}
-  background-color: darkorange;
+  background-color: green;
 `;
 
 export const StyledAiFillEdit = styled(AiFillEdit)`
-  color: orange;
+  color: #829460;
   vertical-align: top;
 `;
 

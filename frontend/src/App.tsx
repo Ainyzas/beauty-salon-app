@@ -5,6 +5,7 @@ import AdminLogin from './components/organisms/AdminLogin/AdminLogin';
 import BadPathPage from './components/pages/BadPathPage/BadPathPage';
 import UserRegistrationPage from './components/pages/UserRegistrationPage/UserRegistrationPage';
 import UserViewPage from './components/pages/UserViewPage/UserViewPage';
+import AdminLoginPage from './components/pages/AdminLoginPage/AdminLoginPage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(
@@ -23,7 +24,9 @@ function App() {
     <div>
       {isLoggedIn && <Header />}
       <Routes>
-        {!isLoggedIn && <Route path="/" element={<AdminLogin setIsLoggedIn={setIsLoggedIn} />} />}
+        {!isLoggedIn && (
+          <Route path="/" element={<AdminLoginPage setIsLoggedIn={setIsLoggedIn} />} />
+        )}
 
         {isLoggedIn && (
           <>
