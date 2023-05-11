@@ -6,6 +6,9 @@ import { fetchUsersBySurname } from '../../../api-calls/users';
 export type userObject = {
   _id?: string;
   handleDelete?: () => void;
+  userFetchAndFormat?: () => void;
+  editingUserId?: string | null;
+  setEditingUserId?: React.Dispatch<React.SetStateAction<string | null>>;
   name: string;
   surname: string;
   email: string;

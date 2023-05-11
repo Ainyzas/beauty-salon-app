@@ -1,12 +1,6 @@
-import React, { FormEvent, useState } from 'react';
+import React, { useState } from 'react';
 import { createUser } from '../../../api-calls/users';
-import {
-  StyledButton,
-  StyledDateDiv,
-  StyledEmailDiv,
-  StyledForm,
-  StyledNameDiv,
-} from './RegistrationForm.styled';
+import { StyledButton, StyledDateDiv, StyledEmailDiv, StyledForm, StyledNameDiv } from './RegistrationForm.styled';
 
 export default function RegistrationForm() {
   const [name, setName] = useState<string>('');
@@ -14,7 +8,7 @@ export default function RegistrationForm() {
   const [email, setEmail] = useState<string>('');
   const [date, setDate] = useState<string>('');
 
-  async function registrationHandler(e: FormEvent) {
+  async function registrationHandler(e: React.FormEvent) {
     e.preventDefault();
     const response = await createUser(name, surname, email, date);
     if (response) {
@@ -47,12 +41,7 @@ export default function RegistrationForm() {
 
       <StyledDateDiv>
         <label htmlFor="date">Registration Date: </label>
-        <input
-          type="datetime-local"
-          id="date"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
-        />
+        <input type="datetime-local" id="date" value={date} onChange={(e) => setDate(e.target.value)} />
       </StyledDateDiv>
 
       <StyledButton type="submit">REGISTER USER</StyledButton>

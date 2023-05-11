@@ -9,12 +9,7 @@ type userSearchProps = {
 export default function UserSearch({ surname, setSurname }: userSearchProps) {
   return (
     <StyledSearch>
-      <input
-        type="text"
-        placeholder="Enter Surname"
-        onChange={(e) => setSurname(e.target.value)}
-        value={surname}
-      />
+      <input type="text" placeholder="Enter Surname" onChange={(e) => setSurname(e.target.value)} value={surname} />
     </StyledSearch>
   );
 }

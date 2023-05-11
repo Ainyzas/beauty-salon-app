@@ -43,11 +43,20 @@ export async function fetchUsersBySurname(surname: string) {
   }
 }
 
+export async function updateUser(id: string, name: string, surname: string, email: string) {
+  try {
+    const response = await axios.put(API_URI + `users/${id}`, { name, surname, email });
+    return response.data;
+  } catch (error) {
+    console.log('Update Unsuccessful');
+  }
+}
+
 export async function deleteUser(id: string) {
   try {
     const response = await axios.delete(API_URI + `users/${id}`);
     return response.data;
   } catch (error) {
-    console.log('Fetch Unsuccessful');
+    console.log('Delete Unsuccessful');
   }
 }

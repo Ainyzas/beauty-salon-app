@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Header from './components/organisms/Header/Header';
-import AdminLogin from './components/organisms/AdminLogin/AdminLogin';
 import BadPathPage from './components/pages/BadPathPage/BadPathPage';
 import UserRegistrationPage from './components/pages/UserRegistrationPage/UserRegistrationPage';
 import UserViewPage from './components/pages/UserViewPage/UserViewPage';

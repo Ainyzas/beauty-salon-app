@@ -25,22 +25,12 @@ export default function AdminLogin({ setIsLoggedIn }: adminProps) {
     <StyledLoginForm onSubmit={loginHandler}>
       <StyledFormDiv>
         <label htmlFor="username">Username: </label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+        <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
       </StyledFormDiv>
 
       <StyledFormDiv>
         <label htmlFor="password">Password: </label>
-        <input
-          type={show ? 'text' : 'password'}
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <input type={show ? 'text' : 'password'} id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
       </StyledFormDiv>
 
       <StyledFormDiv>
