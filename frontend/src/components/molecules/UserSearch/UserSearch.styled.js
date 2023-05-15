@@ -9,7 +9,7 @@ export const StyledSearch = styled.div`
   input {
     background-color: var(--secondary-background);
     color: var(--main-text-color);
-    width: 25%;
+    width: 30%;
     padding: 0.5rem 1rem;
     border: 1px solid transparent;
     border-radius: 5px;
@@ -17,6 +17,18 @@ export const StyledSearch = styled.div`
     :focus {
       border: 2px solid var(--secondary-text-color);
       opacity: 0.8;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    input {
+      width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    input {
+      width: 80%;
     }
   }
 `;

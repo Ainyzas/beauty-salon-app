@@ -1,4 +1,4 @@
-import { StyledButton, StyledLink } from './Nav.styled';
+import { StyledButton, StyledLink, StyledNav } from './Nav.styled';
 
 export default function Nav() {
   function signOutHandler() {
@@ -7,10 +7,10 @@ export default function Nav() {
   }
 
   return (
-    <nav>
+    <StyledNav>
       <StyledLink to="/">View Users</StyledLink>
       <StyledLink to="/register">Register User</StyledLink>
       <StyledButton onClick={signOutHandler}>Sign Out</StyledButton>
-    </nav>
+    </StyledNav>
   );
 }

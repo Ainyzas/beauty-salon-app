@@ -1,7 +1,41 @@
 import styled from 'styled-components';
 
+export const StyledNameDiv = styled.div`
+  display: flex;
+
+  input {
+    width: 95%;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2rem;
+  }
+`;
+
+export const StyledEmailDiv = styled.div``;
+
+export const StyledDateDiv = styled.div``;
+
+export const StyledButton = styled.button`
+  padding: 0.25rem 1.5rem;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: var(--secondary-text-color);
+
+  :hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+`;
+
 export const StyledForm = styled.form`
-  width: 55%;
+  width: 45%;
   margin: 0 auto;
   padding-bottom: 2rem;
   display: flex;
@@ -37,34 +71,28 @@ export const StyledForm = styled.form`
   div {
     margin-bottom: 4rem;
   }
-`;
 
-export const StyledNameDiv = styled.div`
-  display: flex;
+  @media screen and (max-width: 1024px) {
+    width: 75%;
 
-  label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 3rem;
+    ${StyledNameDiv} {
+      label {
+        margin: 0 1rem;
+      }
+    }
   }
-`;
 
-export const StyledEmailDiv = styled.div``;
+  @media screen and (max-width: 600px) {
+    width: 95%;
 
-export const StyledDateDiv = styled.div``;
+    label {
+      font-size: 14px;
+    }
 
-export const StyledButton = styled.button`
-  padding: 0.25rem 1.5rem;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.5rem;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  background-color: var(--secondary-text-color);
-
-  :hover {
-    cursor: pointer;
-    opacity: 0.9;
+    ${StyledNameDiv} {
+      label {
+        margin: 0 0.5rem;
+      }
+    }
   }
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledLoginForm = styled.form`
-  width: 30%;
+  width: 38%;
   margin: 10rem auto;
   padding: 1rem 0;
   display: flex;
@@ -10,6 +10,14 @@ export const StyledLoginForm = styled.form`
   border: 1px solid transparent;
   border-radius: 10px;
   background-color: var(--secondary-background);
+
+  @media screen and (max-width: 1024px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 90%;
+  }
 `;
 
 export const StyledFormDiv = styled.div`

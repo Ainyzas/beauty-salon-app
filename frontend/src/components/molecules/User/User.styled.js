@@ -10,8 +10,12 @@ const fadeIn = keyframes`
     }
 `;
 
+export const StyledUserInfo = styled.section`
+  margin-right: 1rem;
+`;
+
 export const StyledUserCard = styled.div`
-  padding: 0.25rem 1.5rem;
+  padding: 0.25rem 1rem;
   display: flex;
   align-items: center;
   background-color: var(--secondary-background);
@@ -27,10 +31,6 @@ export const StyledUserCard = styled.div`
       color: var(--main-text-color);
     }
   }
-`;
-
-export const StyledUserInfo = styled.section`
-  margin-right: 1rem;
 `;
 
 export const StyledUserButtons = styled.section`
@@ -75,7 +75,7 @@ export const StyledAiFillDelete = styled(AiFillDelete)`
 // Dialog styling
 
 export const StyledDialog = styled.dialog`
-  width: 25%;
+  width: 30%;
   padding-bottom: 0;
   z-index: 100;
   font-size: 18px;
@@ -89,6 +89,14 @@ export const StyledDialog = styled.dialog`
   ::backdrop {
     background-color: black;
     opacity: 0.8;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 60%;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 85%;
   }
 `;
 

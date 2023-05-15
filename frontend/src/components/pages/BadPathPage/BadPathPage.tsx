@@ -9,7 +9,7 @@ export default function BadPathPage() {
 
   return (
     <div>
-      <h1>Bad Path, Redirecting to Home Page...</h1>
+      <h1 style={{ textAlign: 'center' }}>Bad Path, Redirecting to Home Page...</h1>
     </div>
   );
 }
