@@ -15,7 +15,7 @@ export const StyledUserInfo = styled.section`
 `;
 
 export const StyledUserCard = styled.div`
-  padding: 0.25rem 1rem;
+  padding: 0.25rem 1.5rem;
   display: flex;
   align-items: center;
   background-color: var(--secondary-background);
