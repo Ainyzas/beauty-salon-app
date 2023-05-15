@@ -55,13 +55,13 @@ export async function registerUser(req, res) {
 export async function updateUser(req, res) {
   try {
     const { id } = req.params;
-    const { name, surname, email } = req.body;
+    const { name, surname, email, registrationDate } = req.body;
 
     if (!id) {
       return res.status(400).json({ message: 'Invalid user ID' });
     }
 
-    const updatedUser = await User.findByIdAndUpdate(id, { name, surname, email });
+    const updatedUser = await User.findByIdAndUpdate(id, { name, surname, email, registrationDate });
 
     if (!updatedUser) {
       return res.status(404).json({ message: 'User not found' });

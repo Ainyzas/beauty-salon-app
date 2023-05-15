@@ -2,12 +2,7 @@ import axios from 'axios';
 
 const API_URI = 'http://localhost:4000/';
 
-export async function createUser(
-  name: string,
-  surname: string,
-  email: string,
-  registrationDate: string,
-) {
+export async function createUser(name: string, surname: string, email: string, registrationDate: string) {
   try {
     const response = await axios.post(API_URI + 'users', {
       name,
@@ -43,9 +38,9 @@ export async function fetchUsersBySurname(surname: string) {
   }
 }
 
-export async function updateUser(id: string, name: string, surname: string, email: string) {
+export async function updateUser(id: string, name: string, surname: string, email: string, registrationDate: string) {
   try {
-    const response = await axios.put(API_URI + `users/${id}`, { name, surname, email });
+    const response = await axios.put(API_URI + `users/${id}`, { name, surname, email, registrationDate });
     return response.data;
   } catch (error) {
     console.log('Update Unsuccessful');

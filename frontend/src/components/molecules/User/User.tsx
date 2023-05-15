@@ -20,6 +20,7 @@ export default function User({ _id, handleDelete, userFetchAndFormat, name, surn
   const [editName, setEditName] = useState<string>(name);
   const [editSurname, setEditSurname] = useState<string>(surname);
   const [editEmail, setEditEmail] = useState<string>(email);
+  const [editDate, setEditDate] = useState<string>(registrationDate);
 
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -34,7 +35,7 @@ export default function User({ _id, handleDelete, userFetchAndFormat, name, surn
   async function handleEditSubmit(e: React.FormEvent) {
     e.preventDefault();
     try {
-      const response = await updateUser(_id!, editName, editSurname, editEmail);
+      const response = await updateUser(_id!, editName, editSurname, editEmail, editDate);
       console.log(response.message);
       dialogRef.current?.close();
       userFetchAndFormat!();
@@ -89,6 +90,10 @@ export default function User({ _id, handleDelete, userFetchAndFormat, name, surn
           <label>
             Email:
             <input type="email" value={editEmail} onChange={(e) => setEditEmail(e.target.value)} />
+          </label>
+          <label>
+            Registration:
+            <input type="datetime-local" value={editDate} onChange={(e) => setEditDate(e.target.value)} />
           </label>
           <StyledSubmitButton type="submit">UPDATE USER</StyledSubmitButton>
         </StyledDialogForm>
