@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URI = 'https://beauty-salon-app.up.railway.app/auth';
+const API_URI = 'https://beauty-salon-app-api.up.railway.app/auth';
 
 export async function AdminLoginHandler(username: string, password: string): Promise<boolean> {
   try {
