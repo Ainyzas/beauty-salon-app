@@ -13,11 +13,21 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(router);
 
 mongoose
-  .connect(MONGO_URI)
-  .then(() => console.log('Connected To MongoDB'))
-  .catch((error) => console.log(error));
+  .connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to MongoDB');
 
-app.listen(PORT, () => console.log(`App running on PORT: ${PORT}`));
+    const collection = mongoose.connection.db.collection('Salon');
+
+    app.use((req, res, next) => {
+      req.collection = collection;
+      next();
+    });
+
+    app.use(router);
+
+    app.listen(PORT, () => console.log(`App running on PORT: ${PORT}`));
+  })
+  .catch((error) => console.log('Error connecting to MongoDB:', error));
