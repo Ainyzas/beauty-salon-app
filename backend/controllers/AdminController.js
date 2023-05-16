@@ -3,6 +3,7 @@ import Admin from '../models/AdminModel.js';
 export async function loginAdmin(req, res) {
   try {
     const { username, password } = req.body;
+    console.log(username, password);
 
     const admin = await Admin.findOne({ username, password });
     if (!admin) {
