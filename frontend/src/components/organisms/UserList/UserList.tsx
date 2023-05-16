@@ -32,6 +32,7 @@ export default function UserList({ users, setUsers, setInitialFetch }: userListP
   useEffect(() => {
     userFetchAndFormat();
     setInitialFetch(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function handleDelete(id?: string) {
