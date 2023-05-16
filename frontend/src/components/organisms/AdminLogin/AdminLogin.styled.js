@@ -11,6 +11,11 @@ export const StyledLoginForm = styled.form`
   border-radius: 10px;
   background-color: var(--secondary-background);
 
+  h4 {
+    margin-bottom: 0.25rem;
+    color: var(--main-text-color);
+  }
+
   @media screen and (max-width: 1024px) {
     width: 70%;
   }

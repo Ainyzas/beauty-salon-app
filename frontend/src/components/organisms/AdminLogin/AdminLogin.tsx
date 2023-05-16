@@ -39,11 +39,11 @@ export default function AdminLogin({ setIsLoggedIn }: adminProps) {
       </StyledFormDiv>
 
       <StyledLoginButton type="submit">LOGIN</StyledLoginButton>
-      <h5>
+      <h4>
         ainoSalonas
         <br />
         ainoSalonas123
-      </h5>
+      </h4>
     </StyledLoginForm>
   );
 }
