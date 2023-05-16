@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon start server.js",
-    "build": "nodemon build server.js"
+    "build": "echo 'Building backend'"
   },
   "author": "",
   "license": "ISC",
