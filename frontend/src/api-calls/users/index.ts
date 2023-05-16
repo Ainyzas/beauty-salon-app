@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URI = 'http://localhost:4000/';
+const API_URI = 'https://beauty-salon-app.up.railway.app/';
 
 export async function createUser(name: string, surname: string, email: string, registrationDate: string) {
   try {
